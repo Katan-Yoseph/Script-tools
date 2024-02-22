@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" == "" ]; then
+	echo "Usuage: keyboard -br | -us "
+else
+    case $1 in
+        "-br")
+            setxkbmap -layout br
+            ;;
+        "-us")
+            setxkbmap -layout us
+            ;;
+        *)
+            echo "Invalid argument. Usage: $0 [idiom]"
+            ;;
+    esac
+    echo "Keyboard Switched"
+fi
